@@ -7,6 +7,11 @@ posts = [
         'author': 'Me',
         'title': 'first',
         'content': 'Lorem ipsum'
+    },
+    {
+        'author': 'You',
+        'title': 'second',
+        'content': 'Lorem ipsum'
     }
 ]
 
