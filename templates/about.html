@@ -1,1 +1,16 @@
 {%  extends "layout.html" %}
+{% block content %}
+    <div class="content-section col-md-8 ">
+        {% if user %}
+            <h3>Hi {{ user }}!</h3>
+        {% else %}
+            <h3>You're not logged in!</h3>
+            <div class="border-top pt-3 col-md-8">
+                <small class="text-muted">
+                    <a class="ml-2" href="{{ url_for('register.register') }}">Sign In here</a>
+                </small>
+            </div>
+        {%  endif %}
+
+    </div>
+{% endblock content%}

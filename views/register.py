@@ -1,5 +1,5 @@
 import re
-from flask import Blueprint
+from flask import Blueprint, session
 from flask import render_template, request
 from app import get_db_connection
 
@@ -35,4 +35,8 @@ def register():
                 msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
-    return render_template('register.html', msg=msg, title="Sign Up")
+
+    user = ''
+    if session.get('loggedin'):
+        user = session.get('username')
+    return render_template('register.html', msg=msg, title="Sign Up", user=user)

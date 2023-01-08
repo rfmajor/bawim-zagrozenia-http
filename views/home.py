@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
 from app import get_db_connection
 
 bp = Blueprint('home', __name__)
@@ -17,4 +17,8 @@ def fetch_posts():
 @bp.route('/')
 @bp.route('/home')
 def home():
-    return render_template('home.html', posts=fetch_posts())
+    user = ''
+    if session.get('loggedin'):
+        user = session.get('username')
+
+    return render_template('home.html', posts=fetch_posts(), user=user)

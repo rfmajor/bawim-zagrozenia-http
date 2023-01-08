@@ -1,5 +1,6 @@
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint
 from flask import render_template, request, session
+
 from app import get_db_connection
 
 bp = Blueprint('login', __name__)
@@ -24,4 +25,8 @@ def login():
                 msg = 'Logged in successfully !'
             else:
                 msg = 'Incorrect username / password !'
-    return render_template('login.html', msg=msg)
+
+    user = ''
+    if session.get('loggedin'):
+        user = session.get('username')
+    return render_template('login.html', msg=msg, title="Sign In", user=user)
