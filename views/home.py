@@ -21,12 +21,13 @@ def fetch_posts():
 
 def add_post(title, content):
     if session.get('username') and session.get('id'):
-        username = session.get('username')
-        author_id = session.get('id')
-        connection = get_db_connection()
-        with connection:
-            connection.execute("INSERT INTO posts(author_id, author, title, content) VALUES (?, ?, ?, ?)",
-                               (author_id, username, title, content))
+        if title and content:
+            username = session.get('username')
+            author_id = session.get('id')
+            connection = get_db_connection()
+            with connection:
+                connection.execute("INSERT INTO posts(author_id, author, title, content) VALUES (?, ?, ?, ?)",
+                                   (author_id, username, title, content))
     else:
         raise Exception('Not logged in')
 
@@ -48,9 +49,7 @@ def home():
     if session.get('logged_in'):
         user = session.get('username')
 
-    if request.method == 'GET':
-        return render_template('home.html', posts=fetch_posts(), user=user)
-    elif request.method == 'POST' and 'post_content' in request.form and 'post_title' in request.form:
+    if request.method == 'POST' and 'post_content' in request.form and 'post_title' in request.form:
         add_post(request.form['post_title'], request.form['post_content'])
     return render_template('home.html', posts=fetch_posts(), user=user)
 
