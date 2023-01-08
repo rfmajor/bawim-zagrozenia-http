@@ -6,7 +6,7 @@ bp = Blueprint('logout', __name__)
 
 @bp.route('/logout')
 def logout():
-    session.pop('loggedin', None)
+    session.pop('logged_in', None)
     session.pop('id', None)
     session.pop('username', None)
-    return redirect(url_for('login.login'))
+    return redirect(url_for('home.home'))
