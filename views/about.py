@@ -5,7 +5,7 @@ bp = Blueprint('about', __name__)
 
 @bp.route('/about')
 def about():
-    if session.get('loggedin'):
+    if session.get('logged_in'):
         user = session.get('username')
         return render_template("about.html", title="About", user=user)
     else:
