@@ -1,4 +1,6 @@
 import re
+
+import bcrypt
 from flask import Blueprint, session
 from flask import render_template, request
 from app import get_db_connection
@@ -29,8 +31,10 @@ def register():
             elif not username or not password or not email:
                 msg = 'Please fill out the form !'
             else:
+                pwd_salt = bcrypt.gensalt()
+                pwd_hash = bcrypt.hashpw(password.encode('utf-8'), pwd_salt).decode('utf-8')
                 cursor.execute('INSERT INTO users (username, password, email) VALUES (?, ?, ?);',
-                               (username, password, email,))
+                               (username, pwd_hash, email,))
                 connection.commit()
                 msg = 'You have successfully registered !'
     elif request.method == 'POST':

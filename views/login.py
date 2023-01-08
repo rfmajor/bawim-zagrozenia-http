@@ -1,3 +1,4 @@
+import bcrypt
 from flask import Blueprint
 from flask import render_template, request, session, redirect, url_for
 
@@ -21,7 +22,7 @@ def login():
             cursor = connection.cursor()
             cursor.execute('SELECT * FROM users WHERE username = ?;', (username,))
             account = cursor.fetchone()
-            if account and account['password'] == password:
+            if account and bcrypt.checkpw(password.encode('utf-8'), account['password'].encode('utf-8')):
                 session['logged_in'] = True
                 session['id'] = account['id']
                 session['username'] = account['username']
