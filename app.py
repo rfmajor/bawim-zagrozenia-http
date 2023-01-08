@@ -1,8 +1,8 @@
-from flask import Flask, render_template
+import re
+
+import MySQLdb.cursors
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
-import MySQLdb.cursors
-import re
 
 app = Flask(__name__)
 
@@ -20,21 +20,16 @@ posts = [
 ]
 
 
+@app.route('/')
+@app.route('/home')
+def home():
+    return render_template('home.html', posts=posts)
+
+
 @app.route('/about')
 def about():
     return render_template("about.html", title="About")
 
-
-@app.route('/register')
-def register():
-    return render_template('register.html', title='Register')
-
-
-# Store this code in 'app.py' file
-
-
-
-app = Flask(__name__)
 
 app.secret_key = 'your secret key'
 
@@ -46,8 +41,6 @@ app.config['MYSQL_DB'] = 'mywebsite'
 mysql = MySQL(app)
 
 
-@app.route('/')
-@app.route('/home')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ''
@@ -62,10 +55,10 @@ def login():
             session['id'] = account['id']
             session['username'] = account['username']
             msg = 'Logged in successfully !'
-            return render_template('index.html', msg=msg)
+            return render_template('home.html', msg=msg)
         else:
             msg = 'Incorrect username / password !'
-    return render_template('login.html', msg=msg)
+    return render_template('login.html', msg=msg, title="Sign In")
 
 
 @app.route('/logout')
@@ -100,7 +93,7 @@ def register():
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
-    return render_template('register.html', msg=msg)
+    return render_template('register.html', msg=msg, title="Sign Up")
 
 
 if __name__ == '__main__':
