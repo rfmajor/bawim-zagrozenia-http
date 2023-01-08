@@ -11,6 +11,11 @@
                 <h2><a class="article-title">{{ post.title }}</a></h2>
                 <p class="article-content">{{ post.content }}</p>
               </div>
+            {% if session['logged_in'] and post['author_id'] == session['id'] %}
+                <a href="/home/delete/{{ post['id'] }}">
+                    <button class="delete-post-button" name="delete_post_button" type="submit">Delete</button>
+                </a>
+            {% endif %}
             </article>
         {% endfor %}
     </div>
@@ -24,5 +29,13 @@
             </p>
         </div>
     </div>
+    {% if session['logged_in'] %}
+        <form action="{{ url_for('home.home') }}" method="post">
+            Add a new post: <br>
+            <input class="post-title" name="post_title" type="text" placeholder="Title"><br>
+            <textarea class="post-content" name="post_content" placeholder="Write something here"></textarea><br>
+            <button type="submit">Add</button>
+        </form>
+    {% endif %}
     </div>
 {% endblock content%}

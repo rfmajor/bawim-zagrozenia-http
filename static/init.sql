@@ -12,13 +12,14 @@ CREATE TABLE IF NOT EXISTS users
 CREATE TABLE IF NOT EXISTS posts
 (
     id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER REFERENCES users(id),
     author  VARCHAR(20)  NOT NULL,
     title   VARCHAR(50),
     content VARCHAR(500) NOT NULL
 );
 
 
-INSERT INTO users(username, password, email) VALUES ('user', 'user', 'user@user.com');
+INSERT INTO users(id, username, password, email) VALUES (1, 'JanKowalski', 'user', 'jkowal@example.com');
 
-INSERT INTO posts(author, title, content) VALUES ('Me', 'first', 'Lorem ipsum');
-INSERT INTO posts(author, title, content) VALUES ('You', 'second', 'Lorem ipsum');
+INSERT INTO posts(id, author_id, author, title, content) VALUES (1, 1, 'JanKowalski', 'My First Post', 'Lorem ipsum');
+INSERT INTO posts(id, author_id, author, title, content) VALUES (2, 1, 'JanKowalski', 'My Second Post', 'meroL muspi');
