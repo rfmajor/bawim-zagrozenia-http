@@ -12,7 +12,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #003F87	;
 }
 
-.site-header .navbar-nav .nav-link {
+.site-header .nav-link {
+  color: #cbd5db;
+}
+
+.navbar-nav {
   color: #cbd5db;
 }
 
