@@ -3,6 +3,27 @@
     <div class="content-section col-md-8 ">
         {% if user %}
             <h3>Hi {{ user }}!</h3>
+            {% if posts %}
+                <h6>Your posts:</h6>
+                {%  for post in posts %}
+                    <article class="media content-section">
+                      <div class="media-body">
+                        <div class="article-metadata">
+                          <a class="mr-2" href="#">{{ post.author }}</a>
+                        </div>
+                        <h2><a class="article-title">{{ post.title }}</a></h2>
+                        <p class="article-content">{{ post.content }}</p>
+                      </div>
+                    {% if session['logged_in'] and post['author_id'] == session['id'] %}
+                        <a href="/home/delete/{{ post['id'] }}">
+                            <button class="delete-post-button" name="delete_post_button" type="submit">Delete</button>
+                        </a>
+                    {% endif %}
+                    </article>
+                {% endfor %}
+            {% else %}
+                <h6>You have no posts yet</h6>
+            {%  endif %}
         {% else %}
             <h3>You're not logged in!</h3>
             <div class="border-top pt-3 col-md-8">
