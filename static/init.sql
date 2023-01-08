@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS posts
     content VARCHAR(500) NOT NULL
 );
 
-
-INSERT INTO users(id, username, password, email) VALUES (1, 'JanKowalski', 'user', 'jkowal@example.com');
+-- password: user
+INSERT INTO users(id, username, password, email) VALUES (1, 'JanKowalski', '$2a$12$TlxhFIR5fUJdLf.qs1GEHucNpCoj3rXv1JNjQ5YJUGb/pq5M5VAnu', 'jkowal@example.com');
 
 INSERT INTO posts(id, author_id, author, title, content) VALUES (1, 1, 'JanKowalski', 'My First Post', 'Lorem ipsum');
 INSERT INTO posts(id, author_id, author, title, content) VALUES (2, 1, 'JanKowalski', 'My Second Post', 'meroL muspi');
