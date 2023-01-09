@@ -11,7 +11,7 @@
                 <h2><a class="article-title">{{ post.title }}</a></h2>
                 <p class="article-content">{{ post.content }}</p>
               </div>
-            {% if session['logged_in'] and post['author_id'] == session['id'] %}
+            {% if (session['logged_in'] and post['author_id'] == session['id']) or session['user_role'] == 'ADMIN' %}
                 <a href="/home/delete/{{ post['id'] }}">
                     <button class="delete-post-button" name="delete_post_button" type="submit">Delete</button>
                 </a>

@@ -33,8 +33,8 @@ def register():
             else:
                 pwd_salt = bcrypt.gensalt()
                 pwd_hash = bcrypt.hashpw(password.encode('utf-8'), pwd_salt).decode('utf-8')
-                cursor.execute('INSERT INTO users (username, password, email) VALUES (?, ?, ?);',
-                               (username, pwd_hash, email,))
+                sql = f"INSERT INTO users (username, password, email, role) VALUES ('{username}', '{pwd_hash}', '{email}', 'USER');"
+                cursor.execute(sql)
                 connection.commit()
                 msg = 'You have successfully registered !'
     elif request.method == 'POST':
