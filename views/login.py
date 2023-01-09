@@ -26,6 +26,7 @@ def login():
                 session['logged_in'] = True
                 session['id'] = account['id']
                 session['username'] = account['username']
+                session['user_role'] = account['role']
                 return redirect(url_for('home.home', user=user))
             else:
                 msg = 'Incorrect username / password !'

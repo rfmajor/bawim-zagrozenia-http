@@ -35,9 +35,13 @@ def add_post(title, content):
 def delete_post(post_id):
     if session.get('logged_in') and session.get('username') and session.get('id'):
         user_id = session.get('id')
+        user_role = session.get('user_role')
         connection = get_db_connection()
         with connection:
-            connection.execute("DELETE FROM posts WHERE id = ? AND author_id = ?", (post_id, user_id))
+            if user_role == 'ADMIN':
+                connection.execute("DELETE FROM posts WHERE id = ?", (post_id, ))
+            else:
+                connection.execute("DELETE FROM posts WHERE id = ? AND author_id = ?", (post_id, user_id))
     else:
         raise Exception('Failed to delete row')
 
