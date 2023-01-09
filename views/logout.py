@@ -9,4 +9,5 @@ def logout():
     session.pop('logged_in', None)
     session.pop('id', None)
     session.pop('username', None)
+    session.pop('user_role', None)
     return redirect(url_for('home.home'))
