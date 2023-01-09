@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS posts
     id      INTEGER PRIMARY KEY AUTOINCREMENT,
     author_id INTEGER REFERENCES users(id),
     author  VARCHAR(20)  NOT NULL,
-    title   VARCHAR(50),
+    title   VARCHAR(50)  NOT NULL,
     content VARCHAR(500) NOT NULL
 );
 
