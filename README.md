@@ -7,5 +7,5 @@ Napisz, w którym miejscu aplikacji występuje ta podatność oraz opisz działa
 
 3. Zmodyfikuj kod funkcji rejestracji, aby odrzucał 20 najbardziej popularnych haseł w 2021 roku.
 
-Przykładowa lista haseł:
-https://nordpass.com/most-common-passwords-list/
+- Przykładowa lista haseł:
+  https://nordpass.com/most-common-passwords-list/
