@@ -24,7 +24,7 @@ Aplikacja powinna w tym momencie być gotowa do uruchomienia. Tuż po jej starci
    Pobierz obraz wirtualnej maszyny MITM oraz zaimportuj ją do Virtualbox.
    Będziemy potrzebować trzech urządzeń, dlatego sklonuj istniejącą maszynę dwa razy (`prawy klik -> clone`).
    Maszyny odzwierciedlają serwer, użytkownika oraz intrudera. 
-   Następnie dla każdej maszyny wygeneruj nowy MAC Address (`Settings->Network->Advanced->Generate a new random MAC address`)
+   Następnie dla każdej maszyny wygeneruj nowy MAC Address (`Settings->Network->Advanced->Generate a new random MAC address`).
    Uruchom maszyny, sprawdź czy posiadają swój własny adres IP (komenda `ifconfig`) oraz czy jest możliwa komunikacja między nimi (np poprzez ping).
    Jeżeli tak, to środowisko jest gotowe i poprawnie skonfigurowane.
    
