@@ -39,8 +39,8 @@ Aplikacja powinna w tym momencie być gotowa do uruchomienia. Tuż po jej starci
    Zaznaczamy adres naszego serwera i dodajemy jako Target 1, analogicznie dodajemy użytkownika jako Target 2.
    Następnie w rozwijanym pasku `MITM menu` wybieramy `ARP poisoning` i zaznaczamy tylko opcję `Only poison one-way`. Po zatwierdzeniu tablica ARP naszego servera        zostanie zatruta i ruch kierowany jest przez nasz komputer.
    Przechodzimy do nowego terminala, aby uruchomić program wireshark (`sudo wireshark`).
-   Teraz należy wygenerować ruch w sieci, np. na maszynie użytkownika dodajemy post lub przechodzimy między podstronami. Na maszynie intrudera w programie wireshark        powinniśmy zaobserwować przychodzące pakiety. Wybieramy jeden, w którym możemy spodziewać się ciasteczka zawierającego aktywną sesję, np. HTTP FOUND. `Prawy klik -> Follow->TCP Stream`, aby przejrzeć zawartość. Wyszukujemy ciasteczko sesji, które będzie miało postać: `session=value`. 
-   Po skopiowaniu klucza przechodzimy do wyszukiwarki, a następnie pod adres serwera. W narzędziu developerskim (`F12`) w zakładce `storage` możemy dodać nowe              ciasteczko do strony. Ustawiamy Name jako `session` oraz znalezione value. Należy pamiętać, aby Path było ustawione na całą stonę czyli `/`.
+   Teraz należy wygenerować ruch w sieci, np. na maszynie użytkownika dodajemy post lub przechodzimy między podstronami. Na maszynie intrudera w programie wireshark        powinniśmy zaobserwować przychodzące pakiety. Wybieramy jeden, w którym możemy spodziewać się ciasteczka zawierającego aktywną sesję, np. HTTP FOUND. `Prawy klik->Follow->TCP Stream`, aby przejrzeć zawartość. Wyszukujemy ciasteczko sesji, które będzie miało postać: `session=value`. 
+   Po skopiowaniu klucza przechodzimy do wyszukiwarki, a następnie pod adres serwera. W narzędziu developerskim (`F12`) w zakładce `storage` możemy dodać nowe              ciasteczko do strony. Ustawiamy Name jako `session` oraz znalezione value. Należy pamiętać, aby Path było ustawione na całą stonę, czyli `/`.
    Po odświeżeniu strony powinniśmy być zalogowani na koncie użytkownika.
 
 
