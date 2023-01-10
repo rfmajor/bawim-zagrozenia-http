@@ -5,10 +5,11 @@
 W terminalu swojego IDE (zalecamy PyCharm, ale może być dowolne) wpisz kolejno:
 - `python -m venv venv`
 - `./venv/Scripts/activate`
+
 Spowoduje to uruchomienie potrzebnego środowiska wirtualnego. Następnie:
-- pip3 install flask
-- pip3 install app
-- pip3 install –upgrade flask
+- `pip3 install flask`
+- `pip3 install app`
+- `pip3 install -upgrade flask`
  
 Następnie należy wybrać interpreter pythona z oznaczeniem venv.
 Projekt powinien być gotowy do uruchomienia.
