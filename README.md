@@ -1,5 +1,20 @@
 # Zagrożenia HTTP
 
+## Przygotowanie środowiska do pracy
+ 
+W terminalu swojego IDE (zalecamy PyCharm, ale może być dowolne) wpisz kolejno:
+- `python -m venv venv`
+- `./venv/Scripts/activate`
+Spowoduje to uruchomienie potrzebnego środowiska wirtualnego. Następnie:
+- pip3 install flask
+- pip3 install app
+- pip3 install –upgrade flask
+ 
+Następnie należy wybrać interpreter pythona z oznaczeniem venv.
+Projekt powinien być gotowy do uruchomienia.
+
+## Zadania
+
 1. Przejrzyj strukturę bazy danych (plik init.sql) oraz kod aplikacji i spróbuj znaleźć podatność, która pozwoli ci uzyskać prawo do usuwania cudzych postów. 
   - Napisz, w którym miejscu aplikacji występuje ta podatność.
   - Opisz działania, które należało wykonać w celu zrealizowania zadania.
