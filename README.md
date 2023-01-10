@@ -10,7 +10,7 @@
 3. Po kliknięciu przycisku `Create` trzeba wybrać opcję `Create from existing sources`
 4. W prawym górnym rogu aplikacji należy kliknąć przycisk z konfiguracją, następnie `Edit Configurations...`. Powinno pojawić się okienko z konfiguracjami. Po lewej stronie należy kliknąć znak `+` i wybrać z listy opcję `Flask Server`. Następnie należy kliknąć `Apply`
 
-Aplikacja powinna w tym momencie być gotowa do uruchomienia. Tuż po jej starcie możemy uruchomić ją z przeglądarki pod adresem `http://127.0.0.1:5000/`.
+Aplikacja powinna w tym momencie być gotowa do uruchomienia. Tuż po jej starcie będzie dostępna pod adresem `http://127.0.0.1:5000/`.
 
 ## Zadania
 
