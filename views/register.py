@@ -41,6 +41,6 @@ def register():
         msg = 'Please fill out the form !'
 
     user = ''
-    if session.get('loggedin'):
+    if session.get('logged_in'):
         user = session.get('username')
     return render_template('register.html', msg=msg, title="Sign Up", user=user)
