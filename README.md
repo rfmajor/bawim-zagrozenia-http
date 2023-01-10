@@ -1,18 +1,16 @@
 # Zagrożenia HTTP
 
 ## Przygotowanie środowiska do pracy
- 
-W terminalu swojego IDE (zalecamy PyCharm, ale może być dowolne) wpisz kolejno:
-- `python -m venv venv`
-- `./venv/Scripts/activate`
 
-Spowoduje to uruchomienie potrzebnego środowiska wirtualnego. Następnie:
-- `pip3 install flask`
-- `pip3 install app`
-- `pip3 install -upgrade flask`
- 
-Następnie należy wybrać interpreter pythona z oznaczeniem venv.
-Projekt powinien być gotowy do uruchomienia.
+1. Na początku należy sklonować repozytorium do wybranego przez siebie folderu na dysku:
+   `https://github.com/rfmajor/bawim-zagrozenia-http.git`
+2. Następnie należy utworzyć nowy projekt w środowisku PyCharm (`File -> New Project`)
+   - z listy po lewej stronie trzeba wybrać `Flask`
+   - w polu `location` należy wskazać folder zawierający sklonowane repozytorium
+3. Po kliknięciu przycisku `Create` trzeba wybrać opcję `Create from existing sources`
+4. W prawym górnym rogu aplikacji należy kliknąć przycisk z konfiguracją, następnie `Edit Configurations...`. Powinno pojawić się okienko z konfiguracjami. Po lewej stronie należy kliknąć znak `+` i wybrać z listy opcję `Flask Server`. Następnie należy kliknąć `Apply`
+
+Aplikacja powinna w tym momencie być gotowa do uruchomienia. Tuż po jej starcie możemy uruchomić ją z przeglądarki pod adresem `http://127.0.0.1:5000/`.
 
 ## Zadania
 
