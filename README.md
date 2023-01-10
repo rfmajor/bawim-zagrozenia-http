@@ -16,9 +16,9 @@ Projekt powinien być gotowy do uruchomienia.
 ## Zadania
 
 1. Przejrzyj strukturę bazy danych (plik init.sql) oraz kod aplikacji i spróbuj znaleźć podatność, która pozwoli ci uzyskać prawo do usuwania cudzych postów. 
-  - Napisz, w którym miejscu aplikacji występuje ta podatność.
-  - Opisz działania, które należało wykonać w celu zrealizowania zadania.
-  - Zaproponuj sposób, w który można zapobiec temu atakowi.
+   - Napisz, w którym miejscu aplikacji występuje ta podatność.
+   - Opisz działania, które należało wykonać w celu zrealizowania zadania.
+   - Zaproponuj sposób, w który można zapobiec temu atakowi.
 
 2. Wykonaj atak MITM w swojej sieci na udostępnionych maszynach wirtualnych. Przechwyć pliki cookies sesji zalogowanego użytkownika celem dostania się na jego konto.
 
